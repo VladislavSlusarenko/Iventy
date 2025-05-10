@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розклад подій</title>
+</head>
+<body>
+    <h1>Розклад подій</h1>
+    {% for staff, schedule in schedules.items() %}
+        <h2>Розклад для {{ staff }}</h2>
+        <ul>
+            {% for item in schedule %}
+                <li>{{ item['event_id'] }}: {{ item['start'] }} в {{ item['location'] }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>
